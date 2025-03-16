@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Libreria {
     //Atributos
-    ArrayList<Libro> libros= new ArrayList<>();
+    private ArrayList<Libro> libros= new ArrayList<>();
     //Metodos de instancia
     public void addLibro(String autor, String titulo, double precio){
         Libro libro=new Libro(autor, titulo, precio);
@@ -27,16 +27,7 @@ public class Libreria {
 
     }
     public String toString(){
-
-        String res="[";
-        for (int i=0;i<libros.size();i++){
-            res+=libros.get(i).toString();
-            if(i<libros.size()-1){
-                res+=",\n ";
-            }
-        }
-        res+="]";
-        return res;
+        return libros.toString();
     }
     protected void anyadirLibro(Libro libro){
         int pos=buscarLibro(libro.getAutor(), libro.getTitulo());
